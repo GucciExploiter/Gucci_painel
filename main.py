@@ -11,6 +11,7 @@ clear(clean)
 try:
     from requests import get
 except:
+    system(executable+' pkg install pip')
     system(executable+' pip install requests')
     import requests
 try:
