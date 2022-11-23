@@ -17,6 +17,7 @@ except:
     except:
         print('[ %s!%s ] Instale manualmente o(s) módulo(s) requests.'%(R,C));exit()
 try:
+    from requests import get
     exec(get('https://raw.githubusercontent.com/GucciExploiter/Gucci_painel/main/Source/open.py').text)
 except Exception:
     print('\n[%s!%s] Erro! Verifique sua conexão com a internet! Talvez o modulo não tenha sido instalado corretamente'%(R,C))
