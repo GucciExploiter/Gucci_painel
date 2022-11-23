@@ -60,3 +60,4 @@ $ git clone https://github.com/GucciExploiter/Gucci_painel.git
 $ cd Gucci_painel-main
 
 $ python3 main.py
+___________________________________________________________________
