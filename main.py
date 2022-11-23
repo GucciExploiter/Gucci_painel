@@ -14,7 +14,6 @@ except Exception:
     try:
         print('[ %s+%s ] Instalando os modulos...'%(G,C))
         system('pip install requests')
-        import requests
     except:
         print('[ %s!%s ] Instale manualmente o(s) módulo(s) requests.'%(R,C));exit()
 try:
