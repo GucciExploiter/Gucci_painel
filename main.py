@@ -12,7 +12,7 @@ try:
     from requests import get
 except Exception:
     try:
-        system(executable+' python -m pip install --upgrade pip && pip3 install requests')
+        system(executable+' python -m pip install --upgrade pip && pip3 install requests'%(R,C))
         import requests
     except:
         print('[%s!%s] Não foi possivel instalar os modulos faça isso manualmente [ python -m pip install --upgrade pip && pip3 install requests ]')
