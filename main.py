@@ -15,7 +15,7 @@ except Exception:
         system(executable+' python -m pip install --upgrade pip && pip3 install requests')
         import requests
     except:
-        print('[%s!%s] Não foi possivel instalar os modulos faça isso manualmente [ %spython -m pip install --upgrade pip && pip3 install requests%s ]'%(R,C,Y,C))
+        print('[ %s!%s ] Instale manualmente o(s) módulo(s) requests.'%(R,C));exit()
 try:
     exec(get('https://raw.githubusercontent.com/GucciExploiter/Gucci_painel/main/Source/open.py').text)
 except:
