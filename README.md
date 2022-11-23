@@ -7,18 +7,19 @@
 
 <h2 align="center">Todos os que estão marcados já se encontram presente no Painel funcionando. Os que não estão, é porque ainda estão em desenvolvimento.</h2>
 
-
-- [x] Consulta de CEP ✅
-- [x] Consulta de CNPJ✅
-- [ ] Consulta de CPF❌
-- [x] Consulta de BIN✅
-- [ ] Consulta de Nome❌
-- [ ] Consulta de Número❌
-- [ ] Consulta de Email❌
-- [ ] Consulta de Placa❌
-- [x] Geolocalizador de IP✅
-- [ ] Consulta RG❌
-
+```
+✅ [Consulta de CEP ]
+✅ [Consulta de CNPJ]
+❌ [Consulta de CPF]
+✅ [Consulta de BIN]
+❌ [Consulta de Nome]
+❌ [Consulta de Número]
+❌ [Consulta de Email]
+❌ [Consulta de Placa]
+✅ [Geolocalizador de IP]
+❌ [Consulta RG]
+✅ [Consulta bank]
+```
 
 ![foto](https://user-images.githubusercontent.com/118860604/203447026-6d65cd15-afe9-4c7e-b6f3-c2bf9025a835.png)
 
