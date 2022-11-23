@@ -6,54 +6,55 @@ Um painel basico de consultas ele esta em beta e n tem quase nada
 
 Tutorial de download
 ___________________________________________________________________
-💻 Termux
+`💻 Termux`
 
-$ pkg upgrade && pkg update -y
+`$ pkg upgrade && pkg update -y`
 
-$ pkg install git python -y
+`$ pkg install git python -y`
 
-$ git clone https://github.com/GucciExploiter/Gucci_painel.git
+`$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-$ cd Gucci_painel-main
+`$ cd Gucci_painel-main`
 
-$ python3 main.py
+`$ python3 main.py`
 ___________________________________________________________________
-💻 Cmd windows
+`💻 Cmd windows`
 
-$ git clone https://github.com/GucciExploiter/Gucci_painel.git
+`$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-$ cd Gucci_painel-main
+`$ cd Gucci_painel-main`
 
-$ python main.py
+`$ python main.py`
 ___________________________________________________________________
-💻 Debian
+`💻 Debian`
 
-$ apt upgrade && apt update -y
+`$ apt upgrade && apt update -y`
 
-$ apt install git python -y
+`$ apt install git python -y`
 
-$ git clone https://github.com/GucciExploiter/Gucci_painel.git
+`$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-$ cd Gucci_painel-main
+`$ cd Gucci_painel-main`
 
-$ python3 main.py
+`$ python3 main.py`
 ___________________________________________________________________
-💻 Arch Linux
-$ pacman -Syyu git python -y
+`💻 Arch Linux`
 
-$ git clone https://github.com/GucciExploiter/Gucci_painel.git
+`$ pacman -Syyu git python -y`
 
-$ cd Gucci_painel-main
+`$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-$ python3 main.py
+`$ cd Gucci_painel-main`
+
+`$ python3 main.py`
 ___________________________________________________________________
-💻 OpenSUSE
+`💻 OpenSUSE`
 
-$ zypper install python git -y
+`$ zypper install python git -y`
 
-$ git clone https://github.com/GucciExploiter/Gucci_painel.git
+`$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-$ cd Gucci_painel-main
+`$ cd Gucci_painel-main`
 
-$ python3 main.py
+`$ python3 main.py`
 ___________________________________________________________________
