@@ -12,7 +12,7 @@ try:
     from requests import get
 except Exception:
     try:
-        system(executable+' pip install requests')
+        system('pip install requests')
         import requests
     except:
         print('[ %s!%s ] Instale manualmente o(s) módulo(s) requests.'%(R,C));exit()
