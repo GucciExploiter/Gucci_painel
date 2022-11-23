@@ -12,10 +12,10 @@ try:
     from requests import get
 except Exception:
     try:
-        system(executable+' python -m pip install --upgrade pip && pip3 install requests'%(R,C))
+        system(executable+' python -m pip install --upgrade pip && pip3 install requests')
         import requests
     except:
-        print('[%s!%s] Não foi possivel instalar os modulos faça isso manualmente [ python -m pip install --upgrade pip && pip3 install requests ]')
+        print('[%s!%s] Não foi possivel instalar os modulos faça isso manualmente [ python -m pip install --upgrade pip && pip3 install requests ]'%(R,C))
 try:
     print('[%s+%s] Olá bem vindo ao Painel.\n[%s+%s] Antes de continuar o painel ainda esta incompleto ;-;\n[%s+%s] pretendo atualizar ele quando tiver tempo\n[%s+%s] Se vc tiver alguma api manda ai po\n[%s-%s]Discord: Gucci#2661'%(G,C,G,C,G,C,G,C,Y,C))
     input('\n%s> %s| %sAperte enter para continuar %s|%s <%s'%(G,C,B,C,G,C))
