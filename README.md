@@ -14,7 +14,7 @@ ___________________________________________________________________
 
 `$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-`$ cd Gucci_painel-main`
+`$ cd Gucci_painel`
 
 `$ python3 main.py`
 ___________________________________________________________________
@@ -22,7 +22,7 @@ ___________________________________________________________________
 
 `$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-`$ cd Gucci_painel-main`
+`$ cd Gucci_painel`
 
 `$ python main.py`
 ___________________________________________________________________
@@ -34,7 +34,7 @@ ___________________________________________________________________
 
 `$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-`$ cd Gucci_painel-main`
+`$ cd Gucci_painel`
 
 `$ python3 main.py`
 ___________________________________________________________________
@@ -44,7 +44,7 @@ ___________________________________________________________________
 
 `$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-`$ cd Gucci_painel-main`
+`$ cd Gucci_painel`
 
 `$ python3 main.py`
 ___________________________________________________________________
@@ -54,7 +54,7 @@ ___________________________________________________________________
 
 `$ git clone https://github.com/GucciExploiter/Gucci_painel.git`
 
-`$ cd Gucci_painel-main`
+`$ cd Gucci_painel`
 
 `$ python3 main.py`
 ___________________________________________________________________
