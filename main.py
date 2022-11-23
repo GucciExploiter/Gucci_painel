@@ -10,7 +10,7 @@ clear(clean)
 
 try:
     from requests import get
-except Exception:
+except:
     try:
         print('[ %s+%s ] Instalando os modulos...'%(G,C))
         system('pip install requests')
