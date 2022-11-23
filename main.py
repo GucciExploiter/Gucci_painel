@@ -12,6 +12,7 @@ try:
     from requests import get
 except Exception:
     try:
+        print('[ %s+%s ] Instalando os modulos...'%(G,C))
         system('pip install requests')
         import requests
     except:
