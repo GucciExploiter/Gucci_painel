@@ -11,8 +11,8 @@ clear(clean)
 try:
     from requests import get
 except:
-    system('python -m pip install --upgrade pip')
-    execl(executable, executable, *argv)
+    system(executable+' -m pip install requests')
+    import requests
 try:
     print('[%s+%s] Olá bem vindo ao Painel.\n[%s+%s] Antes de continuar o painel ainda esta incompleto ;-;\n[%s+%s] pretendo atualizar ele quando tiver tempo\n[%s+%s] Se vc tiver alguma api manda ai po\n[%s-%s]Discord: Gucci#2661'%(G,C,G,C,G,C,G,C,Y,C))
     input('\n%s> %s| %sAperte enter para continuar %s|%s <%s'%(G,C,B,C,G,C))
