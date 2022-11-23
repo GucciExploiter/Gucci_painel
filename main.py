@@ -18,4 +18,4 @@ try:
     input('\n%s> %s| %sAperte enter para continuar %s|%s <%s'%(G,C,B,C,G,C))
     exec(get('https://raw.githubusercontent.com/GucciExploiter/Gucci_painel/main/Source/open.py').text)
 except Exception:
-    print('[%s!%s] Verifique sua conexão com a internet!'%(R,C))
+    print('\n[%s!%s] Verifique sua conexão com a internet!'%(R,C))
