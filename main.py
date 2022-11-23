@@ -1,4 +1,4 @@
-from os import execl, system
+from os import execl, system,name
 from sys import executable, argv
 
 def clear(clean) -> None: return system(clean)
@@ -17,7 +17,8 @@ def test():
         exec(get('https://raw.githubusercontent.com/GucciExploiter/Gucci_painel/main/Source/Painel.py').text)
     except:
         print('[{R}!{C}] Verifique sua conexão com a internet!')
+
 if __name__ == '__main__':
-    global clean
+	global clean
 	clean ={'nt':'cls','posix':'clear'}[name]
-    test()
+	test()
