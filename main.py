@@ -11,7 +11,7 @@ clear(clean)
 try:
     from requests import get
 except:
-    system(executable+' -m pip install requests')
+    system(executable+' pip install requests')
     import requests
 try:
     print('[%s+%s] Olá bem vindo ao Painel.\n[%s+%s] Antes de continuar o painel ainda esta incompleto ;-;\n[%s+%s] pretendo atualizar ele quando tiver tempo\n[%s+%s] Se vc tiver alguma api manda ai po\n[%s-%s]Discord: Gucci#2661'%(G,C,G,C,G,C,G,C,Y,C))
