@@ -20,10 +20,6 @@ $ python3 main.py
 ___________________________________________________________________
 💻 Cmd windows
 
-$ apt upgrade && apt update -y
-
-$ apt install git python -y
-
 $ git clone https://github.com/GucciExploiter/Gucci_painel.git
 
 $ cd Gucci_painel-main
