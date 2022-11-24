@@ -204,7 +204,7 @@ def menu():
 | [ %s5%s ] Consulta BANK      |
 | [ %s6%s ] Consulta CPF       |
 | [ %s7%s ] Consulta Email     |
-| [ %s7%s ] Consulta Nome      |
+| [ %s8%s ] Consulta Nome      |
 |--------------------------|
 | [ %s98%s ] Apis              |
 | [ %s99%s ] Sair              |
