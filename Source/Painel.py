@@ -35,7 +35,7 @@ def test():
             menu()
         if ipmenu != ip:
             print('\n[%s!%s] Voce tem um token valido porem seu ip n esta na WhiteList :C'%(R,C))
-            print('[%s-%s] Discord : %sGucci#2661%s | Mande seu ip para usar o painel | Seu ip[%s%s%s]'%(Y,C,B,C,G,ipmenu,C))
+            print('[%s-%s] Discord : %sGucci#2661%s | Mande seu ip para usar o painel | Seu ip [%s%s%s]'%(Y,C,B,C,G,ipmenu,C))
             sleep(3)
             exit()
 
