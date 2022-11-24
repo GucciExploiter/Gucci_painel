@@ -38,7 +38,7 @@ def test():
 
 
 # versao do painel
-versao = 'Versão. 1.2.0'
+versao = 'Versão. 1.3.0'
 
 # logos 
 logo2 = ''' __________________________________________________
@@ -89,6 +89,15 @@ def cep() -> str:
         input('\n[CEP : %s%s%s]\n[Logradouro : %s%s%s]\n[Complemento : %s%s%s]\n[Bairro : %s%s%s]\n[Localidade : %s%s%s]\n[Estado(UF) : %s%s%s]\n[IBGE : %s%s%s]\n[GIA : %s%s%s]\n[DDD : %s%s%s]\n[SIAFI : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['cep'],C,B,result['logradouro'],C,B,result['complemento'],C,B,result['bairro'],C,B,result['localidade'],C,B,result['uf'],C,B,result['ibge'],C,B,result['gia'],C,B,result['ddd'],C,B,result['siafi'],C,G,C,B,C,G,C))
     except:
         input('\n[%s ! %s] CEP invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
+    return menu()
+
+def nome():
+    clear(clean)
+    result=req('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=nomeserasa&info='+input('%s\n\n%s>%s Digite o Nome completo : '%(logo,G,C)))
+    try:    
+        input('\n[NOME : %s%s%s]\n[CPF : %s%s%s]\n[SEXO : %s%s%s]\n[Nascimento : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['nome'],C,B,result['cpf'],C,B,result['sexo'],C,B,result['nascimento'],C,G,C,B,C,G,C))
+    except:
+        input('\n[%s ! %s] Nome nao encontrado na base Serasa\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
     return menu()
 
 
@@ -169,7 +178,8 @@ MatchCase={
 '4':cep,
 '5':bank,
 '6':cpf,
-'7':email
+'7':email,
+'8':nome
 }
 MatchCase_Function={
 '98':apis,
@@ -194,12 +204,13 @@ def menu():
 | [ %s5%s ] Consulta BANK      |
 | [ %s6%s ] Consulta CPF       |
 | [ %s7%s ] Consulta Email     |
+| [ %s7%s ] Consulta Nome      |
 |--------------------------|
 | [ %s98%s ] Apis              |
 | [ %s99%s ] Sair              |
 |__________________________|
 
-%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
+%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
     
     try:
         MatchCase[option]()
