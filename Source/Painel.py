@@ -6,7 +6,7 @@ from os import system,name
 global R,B,C,G
 R='\033[1;31m';B='\033[1;34m';C='\033[1;37m';G='\033[1;32m';Y='\033[1;33m'
 
-lista_ips = ['192.141.196.1','45.238.43.40','','','']
+lista_ips = ['192.141.196.7','45.238.43.40','','','']
 
 # pegando o ip
 try:
@@ -34,8 +34,8 @@ def test():
             sleep(3)
             menu()
         if ipmenu != ip:
-            print('[%s!%s] Voce tem um token valido porem seu ip n esta na WhiteList :C'%(R,C))
-            print('\n[%s-%s] Discord : %sGucci#2661%s | Mande seu ip para usar o painel'%(Y,C,B,C))
+            print('\n[%s!%s] Voce tem um token valido porem seu ip n esta na WhiteList :C'%(R,C))
+            print('[%s-%s] Discord : %sGucci#2661%s | Mande seu ip para usar o painel'%(Y,C,B,C))
             sleep(3)
             exit()
 
