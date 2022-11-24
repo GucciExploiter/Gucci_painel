@@ -41,7 +41,7 @@ def test():
 
 
 # versao do painel
-versao = 'Versão. 0.5.3'
+versao = 'Versão. 1.2.0'
 
 # logos 
 logo2 = ''' __________________________________________________
