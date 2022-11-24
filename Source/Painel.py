@@ -30,7 +30,7 @@ except:
 def test():
     for ip in lista_ips:
         if ipmenu == ip:
-            print('[%s+%s] Bem-vindo(a) %sVIP%s [%s%s%s]'%(G,C,B,G,Y,ip,C))
+            print('[%s+%s] Bem-vindo(a) %sVIP%s [%s%s%s]'%(G,C,B,C,Y,ip,C))
             sleep(3)
             menu()
         if ipmenu != ip:
