@@ -2,16 +2,11 @@ from time import sleep
 from json import loads
 from os import system,name
 
-try:
-    import requests
-except:
-    from sys import executable
-    system(executable+' -m pip install requests')
-    import requests
-
 # Cores no terminal
 global R,B,C,G
 R='\033[1;31m';B='\033[1;34m';C='\033[1;37m';G='\033[1;32m';Y='\033[1;33m'
+
+lista_ips = ['192.141.196.7','45.238.43.40','','','']
 
 # pegando o ip
 try:
@@ -20,7 +15,7 @@ except:
 	try:
 		from sys import executable
 		system(executable+' -m pip install requests')
-		from requests import get
+		import requests
 	except:
 		print('%s[ %s!%s ] Instale manualmente o(s) módulo(s) requests.'%(C,R,C));exit()
 		
@@ -31,6 +26,12 @@ try:
 except:
 	print('%s[%s ! %s] Verifique sua conexão à Internet! \n%s'%(C,R,C))
 	exit()
+
+for ip in lista_ips:
+    if ipmenu == ip:
+        print('Bem-vindo(a)')
+        break
+
 
 # versao do painel
 versao = 'Versão. 0.5.3'
@@ -72,17 +73,39 @@ def sair():
     clear(clean);print('%s\n\n[%s+%s] %s mais recente'%(logo2,G,C,versao))
     sleep(4)
     print('\n[%s!%s] Fechando Painel. Ate mais :D'%(R,C))
-    sleep(5)
+    sleep(3)
     clear(clean);exit()
     
 
 # funções de consultas
 def cep() -> str:
     clear(clean)
+    result=req('https://viacep.com.br/ws/'+input('%s\n\n%s>%s Digite o CEP : '%(logo,G,C))+'/json')
     try:
-    	result=req('https://viacep.com.br/ws/'+input('%s\n\n%s>%s Digite o CEP : '%(logo,G,C))+'/json');input('\n[CEP : %s%s%s]\n[Logradouro : %s%s%s]\n[Complemento : %s%s%s]\n[Bairro : %s%s%s]\n[Localidade : %s%s%s]\n[Estado(UF) : %s%s%s]\n[IBGE : %s%s%s]\n[GIA : %s%s%s]\n[DDD : %s%s%s]\n[SIAFI : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['cep'],C,B,result['logradouro'],C,B,result['complemento'],C,B,result['bairro'],C,B,result['localidade'],C,B,result['uf'],C,B,result['ibge'],C,B,result['gia'],C,B,result['ddd'],C,B,result['siafi'],C,G,C,B,C,G,C))
+        input('\n[CEP : %s%s%s]\n[Logradouro : %s%s%s]\n[Complemento : %s%s%s]\n[Bairro : %s%s%s]\n[Localidade : %s%s%s]\n[Estado(UF) : %s%s%s]\n[IBGE : %s%s%s]\n[GIA : %s%s%s]\n[DDD : %s%s%s]\n[SIAFI : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['cep'],C,B,result['logradouro'],C,B,result['complemento'],C,B,result['bairro'],C,B,result['localidade'],C,B,result['uf'],C,B,result['ibge'],C,B,result['gia'],C,B,result['ddd'],C,B,result['siafi'],C,G,C,B,C,G,C))
     except:
         input('\n[%s ! %s] CEP invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
+    return menu()
+
+
+def email():
+    clear(clean)
+    result=req('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=emailowndata&info='+input('%s\n\n%s>%s Digite o Email : '%(logo,G,C)))
+    try:    
+        input('\n[NOME : %s%s%s]\n[CPF : %s%s%s]\n[emailPessoal : %s%s%s]\n[Nota : %s%s%s]\n[Mae : %s%s%s]\n[Pai : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['nome'],C,B,result['cpf'],C,B,result['emailPessoal'],C,B,result['nota'],C,B,result['mae'],C,B,result['pai'],C,G,C,B,C,G,C))
+    except:
+        input('\n[%s ! %s] email nao encontrado na base owndata\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
+    return menu()
+
+
+def cpf():
+    clear(clean)
+    req = requests.get('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=cpfprodata&info='+ input('%s\n\n%s> %sDigite o CPF : '%(logo,G,C))).text
+    req = loads(req)
+    try:
+        input('\n[nome : %s%s%s]\n[cpf : %s%s%s]\n[nascimento : %s%s%s\n[situacao : %s%s%s]\n[idade: %s%s%s]\n[cns : %s%s%s]\n[relacionamento : %s%s%s]\n[sexo : %s%s%s]\n[mae : %s%s%s]\n[pai : %s%s%s]\n[profissao : %s%s%s]\n[Renda Presumida: %s%s%s]\n\n[Receita Federal : %s%s%s]\n[conjuge : %s%s%s]\n\n[enderecos : %s%s%s]\n\n[emails : %s%s%s]\n[vinculosEmpregaticios : %s%s%s]\n[telefone do CPF : %s%s%s]\n\n[Possiveis Parentes : %s%s%s]\n\n[vizinhos : %s%s%s]\n[registrosIrp : %s%s%s]\n[sociedades : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(G,req['nome'],C,G,req['cpf'],C,G,req['nascimento'],C,G,req['situacao'],C,G,req['idade'],C,G,req['cns'],C,G,req['relacionamento'],C,G,req['sexo'],C,G,req['mae'],C,G,req['pai'],C,G,req['profissao'],C,G,req['rendaPresumida'],C,G,req['receitaFederal'],C,G,req['conjuge'],C,G,req['enderecos'],C,G,req['emails'],C,G,req['vinculosEmpregaticios'],C,G,req['telefonesDoCPF'],C,G,req['possiveisParentes'],C,G,req['vizinhos'],C,G,req['registrosIrpf'],C,G,req['sociedades'],C,G,C,B,C,G,C))
+    except:
+        input('\n[%s ! %s] codigo CPF invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
     return menu()
 
 
@@ -140,7 +163,9 @@ MatchCase={
 '2':ip,
 '3':bin,
 '4':cep,
-'5':bank
+'5':bank,
+'6':cpf,
+'7':email
 }
 MatchCase_Function={
 '98':apis,
@@ -155,20 +180,22 @@ def menu():
 [ %sSeu ip %s: %s%s%s ]
 
 [%s Discord %s: %sGucci#2661%s ]
- _________________________
-|      [%sConsultas%s]        |
-|-------------------------|
-| [ %s1%s ] Consulta CNPJ     |
-| [ %s2%s ] Consulta IP       |
-| [ %s3%s ] Consulta BIN      |
-| [ %s4%s ] Consulta CEP      |
-| [ %s5%s ] Consulta BANK     |
-|-------------------------|
-| [ %s98%s ] Apis             |
-| [ %s99%s ] Sair             |
-|_________________________|
+ __________________________
+|      [%sConsultas%s]         |
+|--------------------------|
+| [ %s1%s ] Consulta CNPJ      |
+| [ %s2%s ] Consulta IP        |
+| [ %s3%s ] Consulta BIN       |
+| [ %s4%s ] Consulta CEP       |
+| [ %s5%s ] Consulta BANK      |
+| [ %s6%s ] Consulta CPF       |
+| [ %s7%s ] Consulta Email     |
+|--------------------------|
+| [ %s98%s ] Apis              |
+| [ %s99%s ] Sair              |
+|__________________________|
 
-%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
+%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
     
     try:
         MatchCase[option]()
