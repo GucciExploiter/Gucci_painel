@@ -38,7 +38,7 @@ def test():
 
 
 # versao do painel
-versao = 'Versão. 1.3.0'
+versao = 'Versão. 1.5.0'
 
 # logos 
 logo2 = ''' __________________________________________________
@@ -51,7 +51,7 @@ logo2 = ''' __________________________________________________
 |           %s██████╦╝░░░██║░░░███████╗  %s          | |
 |           %s╚═════╝░░░░╚═╝░░░╚══════╝%s            | |
 |                                                | |
-|            [%sDiscord : Gucci#2661%s]              | |
+|            [%sTik Tok : gucci..mp4%s]              | |
 |________________________________________________|/'''%(B,C,B,C,B,C,B,C,B,C,B,C,B,C,Y,C)
 logo = ''' ___________________________________________________
 /_________________________________________________/ |
@@ -75,9 +75,9 @@ def req(api_req) -> str: return loads(get(api_req).text)
 # função de fechar o painel.
 def sair():
     clear(clean);print('%s\n\n[%s+%s] %s mais recente'%(logo2,G,C,versao))
-    sleep(4)
+    sleep(2)
     print('\n[%s!%s] Fechando Painel. Ate mais :D'%(R,C))
-    sleep(3)
+    sleep(1)
     clear(clean);exit()
     
 
@@ -91,11 +91,20 @@ def cep() -> str:
         input('\n[%s ! %s] CEP invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
     return menu()
 
+def num():
+    clear(clean)
+    try:
+        result33=req('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=telefoneteldb&info='+input('%s\n\n%s>%s Digite o Telefone com DDD : '%(logo,G,C)))    
+        input('\n[NOME : %s%s%s]\n[CPF/CNPJ : %s%s%s]\n[operadora : %s%s%s]\n[endereco : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result33['nome'],C,B,result33['cpfCnpj'],C,B,result33['operadora'],C,B,result33['endereco'],C,G,C,B,C,G,C))
+    except:
+        input('\n[%s ! %s] Telefone nao encontrado na base teldb\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
+    return menu()
+
 def nome():
     clear(clean)
-    result=req('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=nomeserasa&info='+input('%s\n\n%s>%s Digite o Nome completo : '%(logo,G,C)))
+    result11 = requests.get('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=nomeserasa&info='+input('%s\n\n%s>%s Digite o Nome completo : '%(logo,G,C)))
     try:    
-        input('\n[NOME : %s%s%s]\n[CPF : %s%s%s]\n[SEXO : %s%s%s]\n[Nascimento : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['nome'],C,B,result['cpf'],C,B,result['sexo'],C,B,result['nascimento'],C,G,C,B,C,G,C))
+        input('\n[NOME : %s%s%s]\n[CPF : %s%s%s]\n[SEXO : %s%s%s]\n[Nascimento : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result11['nome'],C,B,result11['cpf'],C,B,result11['sexo'],C,B,result11['nascimento'],C,G,C,B,C,G,C))
     except:
         input('\n[%s ! %s] Nome nao encontrado na base Serasa\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
     return menu()
@@ -179,7 +188,8 @@ MatchCase={
 '5':bank,
 '6':cpf,
 '7':email,
-'8':nome
+'8':nome,
+'9':num
 }
 MatchCase_Function={
 '98':apis,
@@ -194,23 +204,24 @@ def menu():
 [ %sSeu ip %s: %s%s%s ]
 
 [%s Discord %s: %sGucci#2661%s ]
- __________________________
-|      [%sConsultas%s]         |
-|--------------------------|
-| [ %s1%s ] Consulta CNPJ      |
-| [ %s2%s ] Consulta IP        |
-| [ %s3%s ] Consulta BIN       |
-| [ %s4%s ] Consulta CEP       |
-| [ %s5%s ] Consulta BANK      |
-| [ %s6%s ] Consulta CPF       |
-| [ %s7%s ] Consulta Email     |
-| [ %s8%s ] Consulta Nome      |
-|--------------------------|
-| [ %s98%s ] Apis              |
-| [ %s99%s ] Sair              |
-|__________________________|
+ _____________________________
+|      [%sConsultas%s]            |
+|-----------------------------|
+| [ %s1%s ] Consulta CNPJ         |
+| [ %s2%s ] Consulta IP           |
+| [ %s3%s ] Consulta BIN          |
+| [ %s4%s ] Consulta CEP          |
+| [ %s5%s ] Consulta BANK         |
+| [ %s6%s ] Consulta CPF          |
+| [ %s7%s ] Consulta Email        |
+| [ %s8%s ] Consulta Nome         |
+| [ %s9%s ] Consulta Numero       |
+|-----------------------------|
+| [ %s98%s ] Apis                 |
+| [ %s99%s ] Sair                 |
+|_____________________________|
 
-%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
+%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
     
     try:
         MatchCase[option]()
@@ -227,5 +238,5 @@ if __name__ == '__main__':
 
 print('\n[%s!%s] Voce tem um token valido porem seu ip n esta na WhiteList :C'%(R,C))
 print('[%s-%s] Discord : %sGucci#2661%s | Mande seu ip para usar o painel | Seu ip [%s%s%s]'%(Y,C,B,C,G,ipmenu,C))
-sleep(3)
+sleep(1)
 exit()
