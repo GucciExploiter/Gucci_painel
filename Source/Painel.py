@@ -6,8 +6,6 @@ from os import system,name
 global R,B,C,G
 R='\033[1;31m';B='\033[1;34m';C='\033[1;37m';G='\033[1;32m';Y='\033[1;33m'
 
-lista_ips = ['177.155.79.60','45.238.43.40','192.141.196.7','','']
-
 # pegando o ip
 try:
 	from requests import get
@@ -26,14 +24,6 @@ try:
 except:
 	print('%s[%s ! %s] Verifique sua conexão à Internet! \n%s'%(C,R,C))
 	exit()
-
-def test():
-    clear(clean)
-    for ip in lista_ips:
-        if ipmenu == ip:
-            print('[%s+%s] Bem-vindo(a) %sVIP%s [%s%s%s]'%(G,C,B,C,Y,ip,C))
-            sleep(3)
-            menu()
         
 
 
@@ -234,9 +224,5 @@ def menu():
 if __name__ == '__main__':
 	global clean
 	clean ={'nt':'cls','posix':'clear'}[name]
-	test()
+	menu()
 
-print('\n[%s!%s] Voce tem um token valido porem seu ip n esta na WhiteList :C'%(R,C))
-print('[%s-%s] Discord : %sGucci#2661%s | Mande seu ip para usar o painel | Seu ip [%s%s%s]'%(Y,C,B,C,G,ipmenu,C))
-sleep(1)
-exit()
