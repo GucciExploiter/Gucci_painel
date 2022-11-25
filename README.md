@@ -1,4 +1,4 @@
-<h3><p align="center">Version: 0.5.3</p></h3>
+<h3><p align="center">Version: 1.3.0</p></h3>
   <p align="center">
     Este painel de consulta tem o objetivo de retornar dados pessoais através do Nome, Número ou CPF. De forma que não precise pagar por isso.</h2>
   </p>
@@ -10,11 +10,11 @@
 ```
 ✅ [Consulta de CEP ]
 ✅ [Consulta de CNPJ]
-❌ [Consulta de CPF]
+✅ [Consulta de CPF]
 ✅ [Consulta de BIN]
-❌ [Consulta de Nome]
-❌ [Consulta de Número]
-❌ [Consulta de Email]
+✅ [Consulta de Nome]
+✅ [Consulta de Número]
+✅ [Consulta de Email]
 ❌ [Consulta de Placa]
 ✅ [Geolocalizador de IP]
 ❌ [Consulta RG]
