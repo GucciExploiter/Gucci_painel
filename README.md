@@ -24,9 +24,6 @@
 ![image](https://user-images.githubusercontent.com/118860604/203995481-d29e85ce-81aa-4eda-abbf-720addde6aed.png)
 
 
-![ssssssss](https://user-images.githubusercontent.com/118860604/203615717-5761ed4f-d3a2-40db-8839-30aca980fc82.png)
-
-
 
 <h2 align="center">📁 Tutorial de download 📁</h2>
 
