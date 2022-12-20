@@ -59,7 +59,6 @@ logo = ''' ___________________________________________________
 
 # tests
 def clear(clean) -> None: return system(clean)
-def req(api_req) -> str: return loads(get(api_req).text)
 
 
 # função de fechar o painel.
@@ -69,90 +68,19 @@ def sair():
     print('\n[%s!%s] Fechando Painel. Ate mais :D'%(R,C))
     sleep(1)
     clear(clean);exit()
-    
 
-# funções de consultas
-def cep() -> str:
-    clear(clean)
-    result=req('https://viacep.com.br/ws/'+input('%s\n\n%s>%s Digite o CEP : '%(logo,G,C))+'/json')
-    try:
-        input('\n[CEP : %s%s%s]\n[Logradouro : %s%s%s]\n[Complemento : %s%s%s]\n[Bairro : %s%s%s]\n[Localidade : %s%s%s]\n[Estado(UF) : %s%s%s]\n[IBGE : %s%s%s]\n[GIA : %s%s%s]\n[DDD : %s%s%s]\n[SIAFI : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['cep'],C,B,result['logradouro'],C,B,result['complemento'],C,B,result['bairro'],C,B,result['localidade'],C,B,result['uf'],C,B,result['ibge'],C,B,result['gia'],C,B,result['ddd'],C,B,result['siafi'],C,G,C,B,C,G,C))
-    except:
-        input('\n[%s ! %s] CEP invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-def num():
-    clear(clean)
-    try:
-        result33=req('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=telefoneteldb&info='+input('%s\n\n%s>%s Digite o Telefone com DDD : '%(logo,G,C)))    
-        input('\n[NOME : %s%s%s]\n[CPF/CNPJ : %s%s%s]\n[operadora : %s%s%s]\n[endereco : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result33['nome'],C,B,result33['cpfCnpj'],C,B,result33['operadora'],C,B,result33['endereco'],C,G,C,B,C,G,C))
-    except:
-        input('\n[%s ! %s] Telefone nao encontrado na base teldb\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-def nome():
-    clear(clean)
-    result11 = requests.get('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=nomeserasa&info='+input('%s\n\n%s>%s Digite o Nome completo : '%(logo,G,C)))
-    try:    
-        input('\n[NOME : %s%s%s]\n[CPF : %s%s%s]\n[SEXO : %s%s%s]\n[Nascimento : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result11['nome'],C,B,result11['cpf'],C,B,result11['sexo'],C,B,result11['nascimento'],C,G,C,B,C,G,C))
-    except:
-        input('\n[%s ! %s] Nome nao encontrado na base Serasa\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-
-def email():
-    clear(clean)
-    result=req('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=emailowndata&info='+input('%s\n\n%s>%s Digite o Email : '%(logo,G,C)))
-    try:    
-        input('\n[NOME : %s%s%s]\n[CPF : %s%s%s]\n[emailPessoal : %s%s%s]\n[Nota : %s%s%s]\n[Mae : %s%s%s]\n[Pai : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['nome'],C,B,result['cpf'],C,B,result['emailPessoal'],C,B,result['nota'],C,B,result['mae'],C,B,result['pai'],C,G,C,B,C,G,C))
-    except:
-        input('\n[%s ! %s] email nao encontrado na base owndata\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-
-def cpf():
-    clear(clean)
-    req = requests.get('http://luarsearch.tk/?token=GZEq-tQEe-Vfym-ttiV-7FXl&consulta=cpfprodata&info='+ input('%s\n\n%s> %sDigite o CPF : '%(logo,G,C))).text
-    req = loads(req)
-    try:
-        input('\n[nome : %s%s%s]\n[cpf : %s%s%s]\n[nascimento : %s%s%s\n[situacao : %s%s%s]\n[idade: %s%s%s]\n[cns : %s%s%s]\n[relacionamento : %s%s%s]\n[sexo : %s%s%s]\n[mae : %s%s%s]\n[pai : %s%s%s]\n[profissao : %s%s%s]\n[Renda Presumida: %s%s%s]\n\n[Receita Federal : %s%s%s]\n[conjuge : %s%s%s]\n\n[enderecos : %s%s%s]\n\n[emails : %s%s%s]\n[vinculosEmpregaticios : %s%s%s]\n[telefone do CPF : %s%s%s]\n\n[Possiveis Parentes : %s%s%s]\n\n[vizinhos : %s%s%s]\n[registrosIrp : %s%s%s]\n[sociedades : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(G,req['nome'],C,G,req['cpf'],C,G,req['nascimento'],C,G,req['situacao'],C,G,req['idade'],C,G,req['cns'],C,G,req['relacionamento'],C,G,req['sexo'],C,G,req['mae'],C,G,req['pai'],C,G,req['profissao'],C,G,req['rendaPresumida'],C,G,req['receitaFederal'],C,G,req['conjuge'],C,G,req['enderecos'],C,G,req['emails'],C,G,req['vinculosEmpregaticios'],C,G,req['telefonesDoCPF'],C,G,req['possiveisParentes'],C,G,req['vizinhos'],C,G,req['registrosIrpf'],C,G,req['sociedades'],C,G,C,B,C,G,C))
-    except:
-        input('\n[%s ! %s] codigo CPF invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-
-def bank():
-    clear(clean)
-    result = requests.get('https://brasilapi.com.br/api/banks/v1/'+ input('%s\n\n%s> %sDigite o codigo bancario : '%(logo,G,C))).text
-    result = loads(result)
-    try:
-        input('\n[ISPB : %s%s%s]\n[Nome : %s%s%s]\n[Código : %s%s%s]\n[Nome Completo : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['ispb'],C,B,result['name'],C,B,result['code'],C,B,result['fullName'],C,G,C,B,C,G,C))
-    except:
-        input('\n[%s ! %s] codigo bancario invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-
-def bin() -> str:
-    clear(clean)
-    try: 
-        result=req('https://lookup.binlist.net/%s'%input('%s\n\n%s>%s Digite a BIN : '%(logo,G,C)));input('\n[Tipo : %s%s%s]\n[Marca : %s%s%s]\n[Pré-Pago : %s%s%s]\n[País : %s%s%s]\n[Nome do Banco : %s%s%s]\n[Telefone : %s%s%s]\n[Cidade : %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,result['type'],C,B,result['brand'],C,B,str(result['prepaid']),C,B,result['country']['name'],C,B,result['bank']['name'],C,B,result['bank']['phone'],C,B,result['bank']['city'],C,G,C,B,C,G,C))
-    except: 
-        input('\n[%s ! %s] BIN invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
-    return menu()
-
-
-def ip():
+def ip2() -> None:
     clear(clean)
     res = requests.get('https://ipwhois.app/json/'+ input('%s\n\n%s> %sDigite o ip : '%(logo,G,C))).text
     res = loads(res)
     try:
         input('\n[ip: %s%s%s]\n[success: %s%s%s]\n[type: %s%s%s]\n[continent: %s%s%s]\n[continent_code: %s%s%s]\n[Pais: %s%s%s]\n[Pais_code: %s%s%s]\n[Pais_phone: %s%s%s]\n[region: %s%s%s]\n[Cidade: %s%s%s]\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(B,res['ip'],C,B,res['success'],C,B,res['type'],C,B,res['continent'],C,B,res['continent_code'],C,B,res['country'],C,B,res['country_code'],C,B,res['country_phone'],C,B,res['region'],C,B,res['city'],C,G,C,B,C,G,C))
     except:
-        input('\n[%s ! %s] IP invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
+        input('\n[%s ! %s] IP não Encontrado ou invalido!\n\n%s> %s| %sAperte enter para voltar ao menu %s|%s <%s'%(R,C,G,C,B,C,G,C))
     return menu()
 
 
-def cnpj() -> str:
+def cnpj() -> None:
     clear(clean)
     res2 = requests.get('https://api-publica.speedio.com.br/buscarcnpj?cnpj='+ input('%s\n\n%s> %sDigite o CNPJ : '%(logo,G,C))).text
     res2 = loads(res2)
@@ -170,48 +98,35 @@ def apis():
 
 
 
-MatchCase={
-'1':cnpj,
-'2':ip,
-'3':bin,
-'4':cep,
-'5':bank,
-'6':cpf,
-'7':email,
-'8':nome,
-'9':num
+MatchCase = {
+'1':ip,
+'2':cnpj
 }
-MatchCase_Function={
+
+MatchCase_Function = {
 '98':apis,
 '99':sair
 }
 
 # menu do painel
+
 def menu():
     clear(clean)
     option = str(input('''%s
 
 [ %sSeu ip %s: %s%s%s ]
-
 [%s Discord %s: %sGucci#2661%s ]
  _____________________________
 |      [%sConsultas%s]            |
 |-----------------------------|
-| [ %s1%s ] Consulta CNPJ         |
-| [ %s2%s ] Consulta IP           |
-| [ %s3%s ] Consulta BIN          |
-| [ %s4%s ] Consulta CEP          |
-| [ %s5%s ] Consulta BANK         |
-| [ %s6%s ] Consulta CPF          |
-| [ %s7%s ] Consulta Email        |
-| [ %s8%s ] Consulta Nome         |
-| [ %s9%s ] Consulta Numero       |
+| [ %s1%s ] Consulta IP           |
+| [ %s2%s ] Consulta CNPJ         |
 |-----------------------------|
 | [ %s98%s ] Apis                 |
 | [ %s99%s ] Sair                 |
 |_____________________________|
 
-%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,G,C,Y,C,R,C,B,C)))
+%sSelect >>>%s '''%(logo,B,C,B,ipmenu,C,B,C,B,C,B,C,G,C,G,C,Y,C,R,C,B,C)))
     
     try:
         MatchCase[option]()
@@ -225,4 +140,3 @@ if __name__ == '__main__':
 	global clean
 	clean ={'nt':'cls','posix':'clear'}[name]
 	menu()
-
