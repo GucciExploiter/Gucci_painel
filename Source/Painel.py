@@ -69,7 +69,7 @@ def sair():
     sleep(1)
     clear(clean);exit()
 
-def ip2() -> None:
+def ip() -> None:
     clear(clean)
     res = requests.get('https://ipwhois.app/json/'+ input('%s\n\n%s> %sDigite o ip : '%(logo,G,C))).text
     res = loads(res)
