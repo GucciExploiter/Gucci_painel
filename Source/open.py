@@ -6,7 +6,7 @@ def clear(clean) -> None: return system(clean)
 clean ={'nt':'cls','posix':'clear'}[name]
 clear(clean)
 try:
-    print('[%s+%s] Bem Vindo(a) ao Painel CG\n[%s+%s] Este painel nao ira receber mais updates\n[%s+%s] Talvez as APIs nao funcionem mais\n[%s-%s] Discord: %sGucci#2661%s'%(G,C,G,C,G,C,B,C,Y,C))
+    print('[%s+%s] Bem Vindo(a) ao Painel CG\n[%s+%s] Este painel nao ira receber mais updates\n[%s+%s] Talvez as APIs nao funcionem mais\n[%s-%s] Discord: %sGucci#2661%s\n\n[%s!%s] Quase todas as consultas foram removidas :c'%(G,C,G,C,G,C,B,C,Y,C,R,C))
     input('\n%s> %sPress enter para continuar%s <%s'%(G,B,G,C))
     exec(get('https://raw.githubusercontent.com/GucciExploiter/Gucci_painel/main/Source/Painel.py').text)
 except Exception:
