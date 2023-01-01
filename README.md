@@ -8,17 +8,17 @@
 <h2 align="center">Todos os que estão marcados já se encontram presente no Painel funcionando. Os que não estão, é porque ainda estão em desenvolvimento.</h2>
 
 ```
-✅ [Consulta de CEP ]
-✅ [Consulta de CNPJ]
+❌ [Consulta de CEP ]
+❌ [Consulta de CNPJ]
 ❌ [Consulta de CPF]
-✅ [Consulta de BIN]
+❌ [Consulta de BIN]
 ❌ [Consulta de Nome]
 ❌ [Consulta de Número]
 ❌ [Consulta de Email]
 ❌ [Consulta de Placa]
-✅ [Geolocalizador de IP]
+❌ [Geolocalizador de IP]
 ❌ [Consulta RG]
-✅ [Consulta bank]
+❌ [Consulta bank]
 ```
 
 ![image](https://user-images.githubusercontent.com/118860604/203995481-d29e85ce-81aa-4eda-abbf-720addde6aed.png)
